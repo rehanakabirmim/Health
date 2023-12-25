@@ -4,8 +4,8 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DoctorController;
-
 use App\Http\Controllers\FrontendController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AppointmentController;
  
 /*
@@ -35,8 +35,7 @@ Route::get('/myappointment',[HomeController::class,'myappointment']);
 
 Route::get('/cancel_appoint/{id}',[HomeController::class,'cancel_appoint']);
 
-//contact
-Route::post('/contact',[HomeController::class,'contact']);
+
 
 
 Route::post('/appointment', [HomeController::class, 'appointment'])->name('appointment');
@@ -68,8 +67,14 @@ Route::get('dashboard/approved/{id}',[AppointmentController::class,'approved']);
 Route::get('dashboard/canceled/{id}',[AppointmentController::class,'canceled']);
 
 
-//contact
-Route::get('dashboard/show_contact', [AppointmentController::class, 'show_contact']);
+//contact frontend
+Route::post('/contact',[HomeController::class,'contact']);
+
+//contact backend
+Route::get('dashboard/show_contact', [ContactController::class, 'show_contact']);
+
+
+
 
 Route::get('/dashboard', function () {
     return view('admin.dashboard');

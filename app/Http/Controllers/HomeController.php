@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\Doctor;
 use App\Models\Appointment;
+use App\Models\Contact;
 use Carbon\carbon;
 class HomeController extends Controller
 {
@@ -89,11 +90,12 @@ class HomeController extends Controller
 
 
     public function cancel_appoint($id){
-        return $id;
+        // return $id;
        $data=Appointment::find($id);
        $data->delete();
        return redirect()->back();
     }
+
 
 
     
@@ -113,18 +115,19 @@ class HomeController extends Controller
             //   ]);
            
       
-            $insert=Doctor::insertGetId([
+            $insert=Contact::insert([
               'name'=>$request['name'],
               
               'email'=>$request['email'],
               'subject'=>$request['subject'],
-            'message'=>$request['message'],
+                'message'=>$request['message'],
     
             
     
               'created_at'=>Carbon::now()->toDateTimeString(),
     
-           
+              
             ]);
+            return redirect()->back();
     }
 }

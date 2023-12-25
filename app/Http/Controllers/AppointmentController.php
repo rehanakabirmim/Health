@@ -32,10 +32,7 @@ class AppointmentController extends Controller
         return redirect()->back();
     }
 
-    public function show_contact(){
-        $all=Doctor::orderBy('id','DESC')->get();
-        return view('admin.contact.all-contact',compact('all'));
-    }
+   
 
 
 }
