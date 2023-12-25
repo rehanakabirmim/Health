@@ -26,17 +26,20 @@ use App\Http\Controllers\AppointmentController;
 //home
 //homecontroler
 Route::get('/',[HomeController::class,'index']);
-Route::get('/home',[HomeController::class,'redirect']);
+Route::get('/home',[HomeController::class,'redirect'])->middleware('auth','verified');
 
 //apointment frontend
 
-Route::post('/appointment',[HomeController::class,'appointment']);
+
 Route::get('/myappointment',[HomeController::class,'myappointment']);
 
 Route::get('/cancel_appoint/{id}',[HomeController::class,'cancel_appoint']);
 
 //contact
 Route::post('/contact',[HomeController::class,'contact']);
+
+
+Route::post('/appointment', [HomeController::class, 'appointment'])->name('appointment');
 
 
 //Frontend
@@ -61,9 +64,12 @@ Route::get('dashboard/user/delete/{id}', [DoctorController::class, 'delete']);
 
 Route::get('dashboard/show_appoint', [AppointmentController::class, 'show_appoint']);
 
-Route::get('dashboard/approved/{id}',[AppointmentController::class,'approvedt']);
+Route::get('dashboard/approved/{id}',[AppointmentController::class,'approved']);
 Route::get('dashboard/canceled/{id}',[AppointmentController::class,'canceled']);
 
+
+//contact
+Route::get('dashboard/show_contact', [AppointmentController::class, 'show_contact']);
 
 Route::get('/dashboard', function () {
     return view('admin.dashboard');

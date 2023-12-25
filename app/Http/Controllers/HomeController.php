@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\Doctor;
 use App\Models\Appointment;
+use Carbon\carbon;
 class HomeController extends Controller
 {
     public function redirect(){
@@ -31,6 +32,7 @@ class HomeController extends Controller
 
     public function appointment(Request $request){
 
+       
             // $this->validate($request,[
             //     'name'=>'required|max:50',
             //     'email'=>'required|email|max:50|unique:users',
@@ -44,10 +46,10 @@ class HomeController extends Controller
             //   ]);
            
       
-            $insert=Appointment::insertGetId([
+            $insert=Appointment::insert([
             'name'=>$request['name'],
             'phone'=>$request['phone'],
-            'email'=>$request['email'],
+            // 'email'=>$request['email'],
             'doctor'=>$request['doctor'],
             'date'=>$request['date'],
             'message'=>$request['message'],
@@ -59,7 +61,7 @@ class HomeController extends Controller
 
             // }
 
-            'id' => Auth::user()->id,
+            'user_id' => Auth::user()->id,
 
             ]);
 
@@ -87,8 +89,42 @@ class HomeController extends Controller
 
 
     public function cancel_appoint($id){
+        return $id;
        $data=Appointment::find($id);
        $data->delete();
        return redirect()->back();
+    }
+
+
+    
+
+        public function contact(Request $request){
+
+            // $this->validate($request,[
+            //     'name'=>'required|max:50',
+            //     'email'=>'required|email|max:50|unique:doctors',
+            //     'phone'=>'required|min:15',
+                
+            //   ],[
+            //     'name.required'=>'Please enter your name.',
+            //     'email.required'=>'Please enter email address.',
+            //     'phone.required'=>'Please enter phone.',
+               
+            //   ]);
+           
+      
+            $insert=Doctor::insertGetId([
+              'name'=>$request['name'],
+              
+              'email'=>$request['email'],
+              'subject'=>$request['subject'],
+            'message'=>$request['message'],
+    
+            
+    
+              'created_at'=>Carbon::now()->toDateTimeString(),
+    
+           
+            ]);
     }
 }

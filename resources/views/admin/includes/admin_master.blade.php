@@ -50,6 +50,8 @@
                             
 
                             <li><a href="{{url('dashboard/show_appoint')}}"><i class="fas fa-user-circle"></i> Appointments</a></li>
+
+                            <li><a href="{{url('dashboard/show_contact')}}"><i class="fas fa-user-circle"></i>Contact</a></li>
                             <!-- @if(Auth::user()->role=='1')
                             <li><a href="{{url('dashboard/user')}}"><i class="fas fa-user-circle"></i> Users</a></li>
                             @endif

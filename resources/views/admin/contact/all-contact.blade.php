@@ -18,15 +18,11 @@
                 <thead class="table-dark">
                   <tr>
                     <th>User Name</th>
-                    <!-- <th>Email</th> -->
-                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Subject</th>
                     
-                    <th>Doctor Name</th>
-                    <th>Date</th>
                     <th>Message</th>
-                    <th>Status</th>
-                    <th>Approve</th>
-                    <th>Cancel</th>
+                    
                     
                     <th>Manage</th>
                   </tr>
@@ -35,16 +31,10 @@
                   @foreach($all as $data)
                   <tr>
                     <td>{{$data->name}}</td>
-                    <!-- <td>{{$data->email}}</td> -->
-                    <td>{{$data->phone}}</td>
-                    <td>{{$data->doctor}}</td>
-                    <td>{{$data->date}}</td>
+                    <td>{{$data->email}}</td>
+                    <td>{{$data->subject}}</td>
                     <td>{{$data->message}}</td>
-                    <td>{{$data->status}}</td>
-                    <td><a class="btn btn-success" href="{{url('dashboard/approved',$data->id)}}">Approved</a></td>
-
-                    <td><a class="btn btn-success" href="{{url('dashboard/canceled',$data->id)}}">Canceled</a></td>
-                    <td>
+                   
                         <div class="btn-group btn_group_manage" role="group">
                           <button type="button" class="btn btn-sm btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Manage</button>
                           <ul class="dropdown-menu">

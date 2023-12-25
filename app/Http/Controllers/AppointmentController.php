@@ -9,7 +9,7 @@ use App\Models\Doctor;
 class AppointmentController extends Controller
 {
     public function show_appoint(){
-        $all=Doctor::orderBy('id','DESC')->get();
+        $all=Appointment::orderBy('id','DESC')->get();
         return view('admin.appoint.all-appoint',compact('all'));
     }
 
@@ -31,6 +31,13 @@ class AppointmentController extends Controller
         $data->save();
         return redirect()->back();
     }
+
+    public function show_contact(){
+        $all=Doctor::orderBy('id','DESC')->get();
+        return view('admin.contact.all-contact',compact('all'));
+    }
+
+
 }
 
 

@@ -32,7 +32,8 @@
                     <td>{{$data->date}}</td>
                     <td>{{$data->message}}</td>
                     <td>{{$data->status}}</td>
-                    <td><Cancel class="bt btn-danger" onclick="return confirm('Are you sure to delete this')" href="{{url('cancel_appoint',$data->id)}}">Cancel</a></td>
+                    <!-- <li><a class="dropdown-item" href="{{url('dashboard/user/delete/'.$data->id)}}">Delete</a></li> -->
+                    <td><Cancel class="bt btn-danger" onclick="return confirm('Are you sure to delete this')" href="{{url('/cancel_appoint/'.$data->id)}}">Cancel</a></td>
                   </tr>
                   @endforeach
                 </tbody>
