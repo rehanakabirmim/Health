@@ -46,6 +46,7 @@ Route::post('/appointment', [HomeController::class, 'appointment'])->name('appoi
 Route::get('/doctor', [FrontendController::class, 'doctor']);
 Route::get('/doctor/about', [FrontendController::class, 'about']);
 Route::get('/doctor/contact', [FrontendController::class, 'contact']);
+Route::get('/apply', [FrontendController::class, 'apply']);
 
 
 //doctor
@@ -72,8 +73,13 @@ Route::post('/contact',[HomeController::class,'contact']);
 
 //contact backend
 Route::get('dashboard/show_contact', [ContactController::class, 'show_contact']);
+//join as doctor
+Route::post('/apply',[HomeController::class,'apply']);
+// Route::post('/Apply',[HomeController::class,'apply']);
 
-
+//apply backend
+Route::get('dashboard/show_apply', [DoctorController::class, 'show_apply']);
+Route::get('dashboard/apply/view/{id}', [DoctorController::class, 'apply_view']);
 
 
 Route::get('/dashboard', function () {

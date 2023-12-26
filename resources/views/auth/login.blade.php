@@ -1,6 +1,7 @@
 <x-guest-layout>
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
+    <h3 class="mb-6 text-center">Log In to Your One Health!</h3>
 
     <form method="POST" action="{{ route('login') }}">
         @csrf
@@ -42,6 +43,13 @@
             <x-primary-button class="ms-3">
                 {{ __('Log in') }}
             </x-primary-button>
+
+            <!-- Text -->
+            <!-- <div>
+            <p class="py-2 text-center">
+                    Don't have an account? <a class="text-underline" href="{{route('register')}}">Sign up</a>
+                </p>
+            </div> -->
         </div>
     </form>
 </x-guest-layout>

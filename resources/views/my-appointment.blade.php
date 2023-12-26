@@ -5,9 +5,9 @@
           <div class="card mb-3">
             <div class="card-header">
               <div class="row">
-                  <div class="col-md-8 card_title_part">
+                  <!-- <div class="col-md-8 card_title_part">
                       <i class="fab fa-gg-circle"></i>All User Information
-                  </div>
+                  </div> -->
                   
               </div>
             </div>

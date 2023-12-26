@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Doctor;
+use App\Models\DoctorApply;
 class FrontendController extends Controller
 {
     public function doctor(){
@@ -17,6 +18,12 @@ class FrontendController extends Controller
     public function contact(){
         return view('contact');
     }
+
+    public function apply(){
+        return view('doctor_apply');
+    }
+
+    
 }
 
 

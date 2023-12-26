@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\Models\Doctor;
 use App\Models\User;
+use App\Models\DoctorApply;
 use Carbon\Carbon;
 use Session;
 use Image;
@@ -147,6 +148,19 @@ class DoctorController extends Controller
       
         
       }
+
+      public function show_apply(){
+        $all=DoctorApply::orderBy('id','DESC')->get();
+        return view('admin.doctor.all-show-apply',compact('all'));
+    }
+
+    public function apply_view($id){
+     
+      $data=DoctorApply::where('id',$id)->firstOrFail();
+     
+      return view('admin.doctor.apply-view-doctor',compact('data'));
+    }
+
 }
 
 
