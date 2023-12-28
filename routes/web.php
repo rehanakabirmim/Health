@@ -48,6 +48,8 @@ Route::get('/doctor/about', [FrontendController::class, 'about']);
 Route::get('/doctor/contact', [FrontendController::class, 'contact']);
 Route::get('/apply', [FrontendController::class, 'apply']);
 
+// find doctors as speciality
+Route::get('/find/doctor/{specialty}', [DoctorController::class, 'findDoctors']);
 
 //doctor
 Route::get('dashboard/doctor', [DoctorController::class, 'index']);

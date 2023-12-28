@@ -59,6 +59,7 @@ class DoctorController extends Controller
           'phone'=>$request['phone'],
           'email'=>$request['email'],
           'specialty'=>$request['specialty'],
+          'designation'=>$request['designation'],
         'room_no'=>$request['room_no'],
 
         
@@ -160,6 +161,16 @@ class DoctorController extends Controller
      
       return view('admin.doctor.apply-view-doctor',compact('data'));
     }
+
+    public function findDoctors($specialty){
+
+      $all = Doctor::where('specialty', $specialty)->latest()->get();
+
+      // return response()->json(array(
+      //     'doctors' => $all,
+      // ));
+      return json_decode($all);
+  }
 
 }
 

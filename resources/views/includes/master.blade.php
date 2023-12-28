@@ -81,7 +81,7 @@
             @auth
 
             <li class="nav-item">
-              <a class="nav-link bg-success" href="{{url('/myappointment')}}">My Appointment</a>
+              <a class="nav-link btn btn-info ml-lg-3" href="{{url('/myappointment')}}">My Appointment</a>
             </li>
 
             <li class="nav-item dropdown ">

@@ -12,7 +12,8 @@ class FrontendController extends Controller
         return view('doctors', compact('all'));
     }
     public function about(){
-        return view('about');
+        $all = Doctor::Latest()->get();
+        return view('about', compact('all'));
     }
 
     public function contact(){

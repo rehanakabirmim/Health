@@ -43,7 +43,7 @@
                     <td>{{$data->status}}</td>
                     <td><a class="btn btn-success" href="{{url('dashboard/approved',$data->id)}}">Approved</a></td>
 
-                    <td><a class="btn btn-success" href="{{url('dashboard/canceled',$data->id)}}">Canceled</a></td>
+                    <td><a class="btn btn-danger" href="{{url('dashboard/canceled',$data->id)}}">Canceled</a></td>
                     <td>
                         <div class="btn-group btn_group_manage" role="group">
                           <button type="button" class="btn btn-sm btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Manage</button>

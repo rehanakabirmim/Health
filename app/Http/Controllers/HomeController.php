@@ -37,11 +37,10 @@ class HomeController extends Controller
 
     public function appointment(Request $request){
 
-       
             // $this->validate($request,[
             //     'name'=>'required|max:50',
-            //     'email'=>'required|email|max:50|unique:users',
-            //     'phone'=>'required|min:15',
+            //     'email'=>'required|email|max:50|unique:appointments',
+            //     'phone'=>'required|min:15|unique:appointments',
                 
             //   ],[
             //     'name.required'=>'Please enter your name.',
@@ -54,7 +53,7 @@ class HomeController extends Controller
             $insert=Appointment::insert([
             'name'=>$request['name'],
             'phone'=>$request['phone'],
-            // 'email'=>$request['email'],
+            'email'=>$request['email'],
             'doctor'=>$request['doctor'],
             'date'=>$request['date'],
             'message'=>$request['message'],
