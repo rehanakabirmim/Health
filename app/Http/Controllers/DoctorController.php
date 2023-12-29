@@ -80,13 +80,7 @@ class DoctorController extends Controller
           ]);
         }
   
-        if($insert){
-          Session::flash('success','Successfully completed user registration.');
-          return redirect('dashboard/doctor/add');
-        }else{
-          Session::flash('error','Opps! operation failed.');
-          return redirect('dashboard/doctor/add');
-        }
+        return redirect()->back()->with('message','Doctor Added  successfully');
       }
 
 

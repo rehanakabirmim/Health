@@ -1,4 +1,5 @@
 <x-guest-layout>
+<h3 class="mb-6 text-center">Sign Up to Your One Health!</h3>
     <form method="POST" action="{{ route('register') }}">
         @csrf
 

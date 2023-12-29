@@ -68,8 +68,10 @@ Route::get('dashboard/show_appoint', [AppointmentController::class, 'show_appoin
 
 Route::get('dashboard/approved/{id}',[AppointmentController::class,'approved']);
 Route::get('dashboard/canceled/{id}',[AppointmentController::class,'canceled']);
+//Email Notification
+Route::get('dashboard/emailView/{id}',[AppointmentController::class,'emailView']);
 
-
+Route::post('dashboard/sendemail/{id}',[AppointmentController::class,'sendemail']);
 //contact frontend
 Route::post('/contact',[HomeController::class,'contact']);
 

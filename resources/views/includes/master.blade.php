@@ -1,7 +1,4 @@
 
-
-
-
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -62,6 +59,7 @@
         <div class="collapse navbar-collapse" id="navbarSupport">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
+
              
               <a class="nav-link" href="{{url('/home')}}">Home</a>
 

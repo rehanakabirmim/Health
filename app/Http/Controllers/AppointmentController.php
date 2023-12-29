@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Appointment;
 use App\Models\Doctor;
+use Notification;
+use App\Notifications\SendEmailNotification;
 
 class AppointmentController extends Controller
 {
@@ -32,9 +34,33 @@ class AppointmentController extends Controller
         return redirect()->back();
     }
 
-   
+    public function emailView($id)
+    {
+        $data=Appointment::find($id);
+        return view('admin.appoint.email-view',compact('data'));
+    }
 
 
+    public function sendemail(Request $request,$id)
+    {
+     
+        $data=Appointment::find($id);
+        $details=[
+            'greeting'=>$request->greeting,
+            'body'=>$request->body,
+            'actiontext'=>$request->actiontext,
+            'actionurl'=>$request->actionurl,
+            'endpart'=>$request->endpart
+
+
+        ];
+
+        Notification::send($data,new SendEmailNotification($details));
+        return redirect()->back()->with('message','Email Send is successful');
+
+    }
+
+    
 }
 
 

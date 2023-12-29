@@ -26,7 +26,8 @@
                     <th>Message</th>
                     <th>Status</th>
                     <th>Approve</th>
-                    <th>Cancel</th>
+                    <th>Canceled</th>
+                    <th>Send Mail</th>
                     
                     <th>Manage</th>
                   </tr>
@@ -44,6 +45,9 @@
                     <td><a class="btn btn-success" href="{{url('dashboard/approved',$data->id)}}">Approved</a></td>
 
                     <td><a class="btn btn-danger" href="{{url('dashboard/canceled',$data->id)}}">Canceled</a></td>
+                  
+
+                    <td><a class="btn btn-primary" href="{{url('dashboard/emailView',$data->id)}}">Send Mail</a></td>
                     <td>
                         <div class="btn-group btn_group_manage" role="group">
                           <button type="button" class="btn btn-sm btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Manage</button>

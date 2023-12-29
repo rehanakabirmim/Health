@@ -3,6 +3,15 @@
 @section('content')
                     <div class="row">
                         <div class="col-md-12 ">
+                          
+                        @if(session()->has('message'))
+                          <div class="alert alert-success alert-dismissible fade show" role="alert">
+  
+                          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                          {{ session()->get('message')}}
+                          </div>
+                          @endif 
+
                             <form method="post" action="{{url('dashboard/doctor/submit')}}" enctype="multipart/form-data">
                               @csrf
                                 <div class="card mb-3">
