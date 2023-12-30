@@ -42,7 +42,7 @@
       <div class="container">
         <a class="navbar-brand" href="{{url('/home')}}"><span class="text-primary">One</span>-Health</a>
 
-        <!-- <form action="#">
+       <!-- <form action="#">
           <div class="input-group input-navbar">
             <div class="input-group-prepend">
               <span class="input-group-text" id="icon-addon1"><span class="mai-search"></span></span>
@@ -53,32 +53,53 @@
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupport" aria-controls="navbarSupport" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
-        </button> -->
-        <!--  -->
+        </button>  -->
+
+        
+<!-- SEARCH BAR -->
+
+
+        
+     
+<div class="col-md-6">
+                <div class="header-search">
+                    <form action="" method="GET" >
+                        <select class="input-select p-1"  name="category">
+                            <option value="" >All Categories</option>
+                            <option value="h" >A</option>
+                           
+                        </select>
+                        <input class="input p-1" name="product" placeholder="Search here" value="">
+                        <button class="search-btn p-1">Search</button>
+                    </form>
+                </div>
+            </div>
+            <!-- /SEARCH BAR -->
+        
 
         <div class="collapse navbar-collapse" id="navbarSupport">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
+            <li class="nav-item {{Request::is('/home') ? 'active':''}}">
 
              
               <a class="nav-link" href="{{url('/home')}}">Home</a>
 
             </li>
-            <li class="nav-item">
+            <li class="nav-item {{Request::is('/doctor/about') ? 'active':''}}">
               <a class="nav-link" href="{{url('/doctor/about')}}">About Us</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item {{Request::is('/doctor') ? 'active':''}}">
               <a class="nav-link" href="{{url('/doctor')}}">Doctors</a>
             </li>
             <!-- <li class="nav-item">
               <a class="nav-link" href="blog.html">News</a>
             </li> -->
-            <li class="nav-item">
+            <li class="nav-item {{Request::is('/doctor/contact') ? 'active':''}}">
               <a class="nav-link" href="{{url('/doctor/contact')}}">Contact</a>
             </li>
             @auth
 
-            <li class="nav-item">
+            <li class="nav-item {{Request::is('/myappointment') ? 'active':''}} ">
               <a class="nav-link btn btn-info ml-lg-3" href="{{url('/myappointment')}}">My Appointment</a>
             </li>
 
@@ -109,6 +130,7 @@
         </div> <!-- .navbar-collapse -->
       </div> <!-- .container -->
     </nav>
+
   </header>
 
   @yield('content')

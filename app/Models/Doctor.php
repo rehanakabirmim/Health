@@ -12,9 +12,13 @@ class Doctor extends Model
         'name',
         'phone',
         'email',
-        
+
         'specialty',
         'room_no',
     ];
 
+    public function specialityInfo() {
+        return $this->belongsTo('App\Models\Speciality', 'specialty_id', 'id');
+
+    }
 }

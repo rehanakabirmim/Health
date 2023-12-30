@@ -23,7 +23,7 @@
                     <th>Specialty</th>
                     <th>Room No</th>
                     <th>Doctor Image</th>
-                    
+
                     <th>Manage</th>
                   </tr>
                 </thead>
@@ -33,7 +33,8 @@
                     <td>{{$data->name}}</td>
                     <td>{{$data->phone}}</td>
                     <td>{{$data->email}}</td>
-                    <td>{{$data->specialty}}</td>
+
+                    <td>{{$data->specialityInfo->speciality_name}}</td>
                     <td>{{$data->room_no}}</td>
                     <td>
                       @if($data->photo!='')
@@ -69,4 +70,4 @@
           </div>
       </div>
   </div>
- @endsection 
+ @endsection

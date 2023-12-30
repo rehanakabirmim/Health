@@ -16,19 +16,10 @@ use Carbon\carbon;
 class HomeController extends Controller
 {
     public function redirect(){
-        if(Auth::user()->id){
-            if(Auth::user()->usertype=='0'){
-                return view('welcome');
-            }
-            else{
-                return view('admin.dashboard');
-            }
-        }
-        else{
-            return redirect()->back();
-        }
-    }
+        
+        return view('welcome');
 
+    }
     public function index(){
         // $all = data::all();
         return view('welcome');
@@ -37,17 +28,21 @@ class HomeController extends Controller
 
     public function appointment(Request $request){
 
-            // $this->validate($request,[
-            //     'name'=>'required|max:50',
-            //     'email'=>'required|email|max:50|unique:appointments',
-            //     'phone'=>'required|min:15|unique:appointments',
-                
-            //   ],[
-            //     'name.required'=>'Please enter your name.',
-            //     'email.required'=>'Please enter email address.',
-            //     'phone.required'=>'Please enter phone.',
-               
-            //   ]);
+        // $this->validate($request,[
+        //     'name'=>'required|max:50',
+        //     'email'=>'required|email|max:50|unique:doctors',
+        //     'phone'=>'required',
+        //     'specialty_id'=>'required|max:15',
+        //     'doctor'=>'required',
+
+        //   ],[
+        //     'name.required'=>'Please enter your name.',
+        //     'email.required'=>'Please enter email address.',
+        //     'phone.required'=>'Please enter phone.',
+        //     'specialty_id'=>'Please Select Speciality',
+        //     'doctor'=>'Please Select Doctor',
+
+        //   ]);
            
       
             $insert=Appointment::insert([
@@ -119,7 +114,7 @@ class HomeController extends Controller
 
           
         ]);
-        return redirect()->back();
+        return redirect()->back()->with('message','Contact Message Send is successful');
     }
 
 

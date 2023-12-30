@@ -47,12 +47,12 @@
             </x-primary-button>
         </div>
 
-            <!-- Text
+           
             <div>
             <p class="py-2 text-center">
-                    Don't have an account? <a class="text-underline" href="{{route('register')}}">Sign up</a>
+                    Don't have an account?<a class="text-underline" href="{{route('register')}}">Sign up</a>
                 </p>
-            </div> -->
+            </div> 
         </div>
     </form>
 </x-guest-layout>

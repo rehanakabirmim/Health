@@ -36,7 +36,7 @@
                         <tr>
                           <td>Specialty</td>
                           <td>:</td>
-                          <td>{{$data->specialty}}</td>
+                          <td>{{$data->specialityInfo->speciality_name}}</td>
                         </tr>
                         <tr>
                           <td>Room No</td>

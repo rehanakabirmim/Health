@@ -7,6 +7,7 @@ use App\Models\Doctor;
 use App\Models\DoctorApply;
 class FrontendController extends Controller
 {
+
     public function doctor(){
         $all = Doctor::Latest()->get();
         return view('doctors', compact('all'));

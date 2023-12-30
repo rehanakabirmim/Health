@@ -37,49 +37,52 @@ class DoctorController extends Controller
         $data=Doctor::where('id',$id)->firstOrFail();
         return view('admin.doctor.view-doctor',compact('data'));
       }
-  
+
 
       public function insert(Request $request){
 
-        // $this->validate($request,[
-        //     'name'=>'required|max:50',
-        //     'email'=>'required|email|max:50|unique:doctors',
-        //     'phone'=>'required|min:15',
-            
-        //   ],[
-        //     'name.required'=>'Please enter your name.',
-        //     'email.required'=>'Please enter email address.',
-        //     'phone.required'=>'Please enter phone.',
-           
-        //   ]);
-       
-  
+        $this->validate($request,[
+            'name'=>'required|max:50',
+            'email'=>'required|email|max:50|unique:doctors',
+            'phone'=>'required',
+            'specialty_id'=>'required|max:15',
+
+          ],[
+            'name.required'=>'Please enter your name.',
+            'email.required'=>'Please enter email address.',
+            'phone.required'=>'Please enter phone.',
+            'specialty_id'=>'Please Select Speciality',
+
+          ]);
+
+
+
         $insert=Doctor::insertGetId([
           'name'=>$request['name'],
           'phone'=>$request['phone'],
           'email'=>$request['email'],
-          'specialty'=>$request['specialty'],
+          'specialty_id'=>$request['specialty_id'],
           'designation'=>$request['designation'],
         'room_no'=>$request['room_no'],
 
-        
+
 
           'created_at'=>Carbon::now()->toDateTimeString(),
 
-       
+
         ]);
-  
+
         if($request->hasFile('photo')){
           $image=$request->file('photo');
           $imageName='user_'.$insert.'_'.time().'.'.$image->getClientOriginalExtension();
           Image::make($image)->resize(250,250)->save('uploads/users/'.$imageName);
-  
+
           Doctor::where('id',$insert)->update([
               'photo'=>$imageName,
               'updated_at'=>Carbon::now()->toDateTimeString(),
           ]);
         }
-  
+
         return redirect()->back()->with('message','Doctor Added  successfully');
       }
 
@@ -88,50 +91,44 @@ class DoctorController extends Controller
 
       public function update(Request $request){
         $id=$request['id'];
-  
+
         $this->validate($request,[
           'name'=>'required|max:50',
           'email'=>'required|email|max:50|unique:users,email,'.$id.',id',
           'phone'=>'required',
           'room_no'=>'required',
-          
+
         ],[
           'name.required'=>'Please enter your name.',
           'email.required'=>'Please enter email address.',
           'phone.required'=>'Please enter your phone.',
           'room_no'=>'Please enter your room_no.',
-        
+
         ]);
-  
-    
-  
+
+
+
         $update=Doctor::where('id',$id)->update([
           'name'=>$request['name'],
           'phone'=>$request['phone'],
           'email'=>$request['email'],
-          
+
           'room_no'=>$request['room_no'],
           'updated_at'=>Carbon::now()->toDateTimeString(),
         ]);
-  
+
         if($request->hasFile('photo')){
           $image=$request->file('photo');
           $imageName='user_'.$id.'_'.time().'.'.$image->getClientOriginalExtension();
           Image::make($image)->resize(250,250)->save('uploads/users/'.$imageName);
-  
+
           Doctor::where('id',$id)->update([
               'photo'=>$imageName,
               'updated_at'=>Carbon::now()->toDateTimeString(),
           ]);
         }
-  
-        if($update){
-          Session::flash('success','Successfully update doctor information.');
-          return redirect('dashboard/doctor/view/'.$id);
-        }else{
-          Session::flash('error','Opps! operation failed.');
-          return redirect('dashboard/doctor/edit/'.$id);
-        }
+
+        return redirect()->back()->with('message','Doctor information updated  successfully');
       }
 
 
@@ -139,9 +136,9 @@ class DoctorController extends Controller
         $delete=Doctor::where('id',$id)->delete([]);
         $all=Doctor::orderBy('id','DESC')->get();
         return view('admin.doctor.all-doctor',compact('all'));
-      
-      
-        
+
+
+
       }
 
       public function show_apply(){
@@ -150,15 +147,15 @@ class DoctorController extends Controller
     }
 
     public function apply_view($id){
-     
+
       $data=DoctorApply::where('id',$id)->firstOrFail();
-     
+
       return view('admin.doctor.apply-view-doctor',compact('data'));
     }
 
-    public function findDoctors($specialty){
+    public function findDoctors($specialty_id){
 
-      $all = Doctor::where('specialty', $specialty)->latest()->get();
+      $all = Doctor::where('specialty_id', $specialty_id)->latest()->get();
 
       // return response()->json(array(
       //     'doctors' => $all,
@@ -169,4 +166,3 @@ class DoctorController extends Controller
 }
 
 
-    
