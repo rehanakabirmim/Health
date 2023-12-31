@@ -91,6 +91,13 @@
                                       </div>
 
                                       <div class="row mb-3">
+                                        <label class="col-sm-3 col-form-label col_form_label">Time<span class="req_star">*</span>:</label>
+                                        <div class="col-sm-7">
+                                          <input type="text" class="form-control form_control" id="" name="time">
+                                        </div>
+                                      </div>
+
+                                      <div class="row mb-3">
                                         <label class="col-sm-3 col-form-label col_form_label">Doctor Image:</label>
                                         <div class="col-sm-4">
                                           <input type="file" class="form-control form_control" id="" name="photo">

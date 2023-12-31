@@ -37,6 +37,11 @@ Route::post('/contact',[HomeController::class,'contact']);
 //join as doctor
 Route::post('/apply',[HomeController::class,'apply']);
 
+//search
+Route::get('/search', [HomeController::class, 'search'])->name('search');
+
+Route::get('dashboard/doctorsearch', [HomeController::class, 'drsearch']);
+
 
 Route::middleware(['auth','role:1','verified'])->group(function(){
 

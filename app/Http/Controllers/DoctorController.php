@@ -63,6 +63,7 @@ class DoctorController extends Controller
           'email'=>$request['email'],
           'specialty_id'=>$request['specialty_id'],
           'designation'=>$request['designation'],
+          'time'=>$request['time'],
         'room_no'=>$request['room_no'],
 
 
@@ -112,7 +113,7 @@ class DoctorController extends Controller
           'name'=>$request['name'],
           'phone'=>$request['phone'],
           'email'=>$request['email'],
-
+          'time'=>$request['time'],
           'room_no'=>$request['room_no'],
           'updated_at'=>Carbon::now()->toDateTimeString(),
         ]);
@@ -157,9 +158,7 @@ class DoctorController extends Controller
 
       $all = Doctor::where('specialty_id', $specialty_id)->latest()->get();
 
-      // return response()->json(array(
-      //     'doctors' => $all,
-      // ));
+     
       return json_decode($all);
   }
 

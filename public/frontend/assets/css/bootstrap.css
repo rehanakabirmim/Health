@@ -258,7 +258,8 @@ select {
 }
 
 select {
-  word-wrap: normal;
+	word-wrap: normal;
+	padding: 3px 0;
 }
 
 button,

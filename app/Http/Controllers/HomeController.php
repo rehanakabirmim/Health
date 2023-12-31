@@ -108,8 +108,6 @@ class HomeController extends Controller
           'subject'=>$request['subject'],
             'message'=>$request['message'],
 
-        
-
           'created_at'=>Carbon::now()->toDateTimeString(),
 
           
@@ -156,6 +154,27 @@ public function apply(Request $request){
     }
 
     }
+//search
+
+    public function search(Request $request){
+        $doctors=Doctor::orderBy('id','desc')->where('name','LIKE','%'.$request->doctor.'%');
+        if($request->specialty_id != "ALL")$doctors->where('id',$request->specialty_id);
+        $doctors= $doctors->get();
+        $all=Doctor::orderBy('id','DESC')->get();
+        return view('all-doctor-search',compact('all'));
+
+        
+    }
+
+
+    // show doctorinf
+
+    public function drsearch(){
+        $all=Doctor::orderBy('id','DESC')->get();
+            return view('all-doctor-search',compact('all'));
+        }
+       
+    
 }    
 
 

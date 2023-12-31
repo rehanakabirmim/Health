@@ -44,6 +44,11 @@
                           <td>{{$data->room_no}}</td>
                         </tr>
                         <tr>
+                          <td>Time</td>
+                          <td>:</td>
+                          <td>{{$data->time}}</td>
+                        </tr>
+                        <tr>
                           <td>Doctor Image</td>
                           <td>:</td>
                           <td>

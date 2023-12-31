@@ -42,40 +42,32 @@
       <div class="container">
         <a class="navbar-brand" href="{{url('/home')}}"><span class="text-primary">One</span>-Health</a>
 
-       <!-- <form action="#">
-          <div class="input-group input-navbar">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="icon-addon1"><span class="mai-search"></span></span>
-            </div>
-            <input type="text" class="form-control" placeholder="Enter keyword.." aria-label="Username" aria-describedby="icon-addon1">
-          </div>
-        </form>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupport" aria-controls="navbarSupport" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>  -->
 
         
+
 <!-- SEARCH BAR -->
 
-
-        
-     
 <div class="col-md-6">
-                <div class="header-search">
-                    <form action="" method="GET" >
-                        <select class="input-select p-1"  name="category">
-                            <option value="" >All Categories</option>
-                            <option value="h" >A</option>
-                           
-                        </select>
-                        <input class="input p-1" name="product" placeholder="Search here" value="">
-                        <button class="search-btn p-1">Search</button>
-                    </form>
-                </div>
-            </div>
-            <!-- /SEARCH BAR -->
-        
+    <div class="header-search">
+        <form action="{{url('/search')}}" method="GET" >
+            <select class="input-select" name= "specialty_id">
+            @php
+                    $speciality = App\Models\Speciality::latest()->get();
+                @endphp
+                <option value="ALL" {{request('specialty_id') == "ALL" ? 'selected' : ''}}>All specialty</option>
+                @foreach ($speciality as $item)
+                <option value="{{$item->id}}" {{request('specialty_id') == $item->id ? 'selected' : ''}}>{{$item->speciality_name}}</option>
+                @endforeach
+
+            </select>
+            <input class="input" name="doctor" placeholder="Search here" value="{{request('doctor')}}">
+            <button class="search-btn">Search</button>
+        </form>
+    </div>
+</div>
+
+
 
         <div class="collapse navbar-collapse" id="navbarSupport">
           <ul class="navbar-nav ml-auto">

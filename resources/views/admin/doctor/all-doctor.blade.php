@@ -22,6 +22,7 @@
                     <th>Email</th>
                     <th>Specialty</th>
                     <th>Room No</th>
+                    <th>Time</th>
                     <th>Doctor Image</th>
 
                     <th>Manage</th>
@@ -36,6 +37,7 @@
 
                     <td>{{$data->specialityInfo->speciality_name}}</td>
                     <td>{{$data->room_no}}</td>
+                    <td>{{$data->time}}</td>
                     <td>
                       @if($data->photo!='')
                         <img height="30" src="{{asset('uploads/users/'.$data->photo)}}" alt="User Photo"/>
@@ -50,7 +52,7 @@
                           <li><a class="dropdown-item" href="{{url('dashboard/doctor/view/'.$data->id)}}">View</a></li>
                           <li><a class="dropdown-item" href="{{url('dashboard/doctor/edit/'.$data->id)}}">Edit</a></li>
                             <li><a class="dropdown-item" href="{{url('dashboard/user/delete/'.$data->id)}}">Delete</a></li>
-                            <!-- <li><a class="dropdown-item" href="#" id="softDelete" data-bs-toggle="modal" data-bs-target="#softDeleteModal" data-id="">Delete</a></li> -->
+                          
                           </ul>
                           </ul>
                         </div>

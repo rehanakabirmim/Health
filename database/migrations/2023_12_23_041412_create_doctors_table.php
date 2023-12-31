@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('specialty_id')->nullable();
             $table->string('designation')->nullable();
             $table->string('room_no')->nullable();
+            $table->string('time')->nullable();
             $table->string('photo')->nullable();
             $table->timestamps();
         });

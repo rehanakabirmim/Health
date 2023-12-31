@@ -52,8 +52,8 @@
         <div class="col-lg-8 wow fadeInUp">
           <h1 class="text-center mb-3">Welcome to Your Health Center</h1>
           <div class="text-lg">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt neque sit, explicabo vero nulla animi nemo quae cumque, eaque pariatur eum ut maxime! Tenetur aperiam maxime iure explicabo aut consequuntur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt neque sit, explicabo vero nulla animi nemo quae cumque, eaque pariatur eum ut maxime! Tenetur aperiam maxime iure explicabo aut consequuntur.</p>
-            <p>Expedita iusto sunt beatae esse id nihil voluptates magni, excepturi distinctio impedit illo, incidunt iure facilis atque, inventore reprehenderit quidem aliquid recusandae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium quod ad sequi atque accusamus deleniti placeat dignissimos illum nulla voluptatibus vel optio, molestiae dolore velit iste maxime, nobis odio molestias!</p>
+            <p>Our hospital management system seamlessly integrates patient care, appointment scheduling, and resource allocation, fostering an efficient and patient-centric healthcare environment.With real-time data access, our hospital management system empowers administrators to make informed decisions, optimize workflows, and enhance overall operational efficiency.</p>
+            <p>From streamlined appointment booking to centralized patient records, our hospital management system is a comprehensive solution designed to elevate healthcare delivery, ensuring a seamless and organized experience for both medical staff and patients.With a user-friendly interface, our hospital management system provides a centralized platform for managing patient records, scheduling appointments, tracking medical inventory, and facilitating seamless communication among healthcare professionals.</p>
           </div>
         </div>
         <div class="col-lg-10 mt-5">
