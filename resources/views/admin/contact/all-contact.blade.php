@@ -20,10 +20,10 @@
                     <th>User Name</th>
                     <th>Email</th>
                     <th>Subject</th>
-                    
+
                     <th>Message</th>
-                    
-                    
+
+
                     <th>Manage</th>
                   </tr>
                 </thead>
@@ -34,7 +34,7 @@
                     <td>{{$data->email}}</td>
                     <td>{{$data->subject}}</td>
                     <td>{{$data->message}}</td>
-                   
+
                         <div class="btn-group btn_group_manage" role="group">
                           <button type="button" class="btn btn-sm btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Manage</button>
                           <ul class="dropdown-menu">
@@ -51,14 +51,8 @@
                 </tbody>
               </table>
             </div>
-            <div class="card-footer">
-              <div class="btn-group" role="group" aria-label="Button group">
-                <button type="button" class="btn btn-sm btn-dark">Print</button>
-                <button type="button" class="btn btn-sm btn-secondary">PDF</button>
-                <button type="button" class="btn btn-sm btn-dark">Excel</button>
-              </div>
-            </div>
+            
           </div>
       </div>
   </div>
- @endsection 
+ @endsection

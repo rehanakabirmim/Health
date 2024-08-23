@@ -62,7 +62,7 @@ class DoctorController extends Controller
           'phone'=>$request['phone'],
           'email'=>$request['email'],
           'specialty_id'=>$request['specialty_id'],
-          'designation'=>$request['designation'],
+          'qualification'=>$request['qualification'],
           'time'=>$request['time'],
         'room_no'=>$request['room_no'],
 

@@ -20,6 +20,7 @@
                     <th>Name</th>
                     <th>Phone</th>
                     <th>Email</th>
+                    <th>Qualification</th>
                     <th>Specialty</th>
                     <th>Room No</th>
                     <th>Time</th>
@@ -34,7 +35,7 @@
                     <td>{{$data->name}}</td>
                     <td>{{$data->phone}}</td>
                     <td>{{$data->email}}</td>
-
+                    <td>{{$data->qualification}}</td>
                     <td>{{$data->specialityInfo->speciality_name}}</td>
                     <td>{{$data->room_no}}</td>
                     <td>{{$data->time}}</td>
@@ -52,7 +53,7 @@
                           <li><a class="dropdown-item" href="{{url('dashboard/doctor/view/'.$data->id)}}">View</a></li>
                           <li><a class="dropdown-item" href="{{url('dashboard/doctor/edit/'.$data->id)}}">Edit</a></li>
                             <li><a class="dropdown-item" href="{{url('dashboard/user/delete/'.$data->id)}}">Delete</a></li>
-                          
+
                           </ul>
                           </ul>
                         </div>
@@ -60,15 +61,26 @@
                   </tr>
                   @endforeach
                 </tbody>
+                <tfoot>
+
+                    <tr>
+                        <th>Name</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Qualification</th>
+                        <th>Specialty</th>
+                        <th>Room No</th>
+                        <th>Time</th>
+                        <th>Doctor Image</th>
+
+                        <th>Manage</th>
+                      </tr>
+
+
+                </tfoot>
               </table>
             </div>
-            <div class="card-footer">
-              <div class="btn-group" role="group" aria-label="Button group">
-                <button type="button" class="btn btn-sm btn-dark">Print</button>
-                <button type="button" class="btn btn-sm btn-secondary">PDF</button>
-                <button type="button" class="btn btn-sm btn-dark">Excel</button>
-              </div>
-            </div>
+
           </div>
       </div>
   </div>

@@ -59,13 +59,7 @@
                   <div class="col-md-2"></div>
               </div>
             </div>
-            <div class="card-footer">
-              <div class="btn-group" role="group" aria-label="Button group">
-                <button type="button" class="btn btn-sm btn-dark">Print</button>
-                <button type="button" class="btn btn-sm btn-secondary">PDF</button>
-                <button type="button" class="btn btn-sm btn-dark">Excel</button>
-              </div>
-            </div>
+            
           </div>
       </div>
   </div>

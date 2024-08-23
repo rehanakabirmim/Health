@@ -8,7 +8,7 @@
                   <div class="col-md-8 card_title_part">
                       <i class="fab fa-gg-circle"></i>All Applying Doctor Information
                   </div>
-                 
+
               </div>
             </div>
             <div class="card-body">
@@ -21,7 +21,7 @@
                     <th>Specialty</th>
                     <th>About You</th>
                     <th>Doctor Image</th>
-                    
+
                     <th>Manage</th>
                   </tr>
                 </thead>
@@ -41,31 +41,38 @@
                       @endif
                     </td>
 
-                    
+
                      <td>
                         <div class="btn-group btn_group_manage" role="group">
                           <button type="button" class="btn btn-sm btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Manage</button>
                           <ul class="dropdown-menu">
                           <li><a class="dropdown-item" href="{{url('dashboard/apply/view/'. $data->id)}}">View</a></li>
-                         
-                    
+
+
                           </ul>
-                         
+
                         </div>
-                    </td> 
+                    </td>
                   </tr>
                   @endforeach
                 </tbody>
+
+                <tfoot>
+                    <tr>
+                        <th>Name</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Specialty</th>
+                        <th>About You</th>
+                        <th>Doctor Image</th>
+
+                        <th>Manage</th>
+                      </tr>
+                    </tfoot>
               </table>
             </div>
-            <div class="card-footer">
-              <div class="btn-group" role="group" aria-label="Button group">
-                <button type="button" class="btn btn-sm btn-dark">Print</button>
-                <button type="button" class="btn btn-sm btn-secondary">PDF</button>
-                <button type="button" class="btn btn-sm btn-dark">Excel</button>
-              </div>
-            </div>
+
           </div>
       </div>
   </div>
- @endsection 
+ @endsection

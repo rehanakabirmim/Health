@@ -1,6 +1,6 @@
 
-  
- 
+
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -29,10 +29,11 @@
                     <th>Phone</th>
                     <th>Email</th>
                     <!-- <th>Specialty</th> -->
-                    <th>Designation</th>
+                    <th>Qualification</th>
                     <th>Room No</th>
                     <th>Time</th>
                     
+
                   </tr>
           </thead>
           <tbody>
@@ -43,30 +44,29 @@
                     <td>{{$data->email}}</td>
 
                     <!-- <td>{{$data->specialityInfo->speciality_name}}</td> -->
-                   
-                    <td>{{$data-> designation}}</td>
+
+                    <td>{{$data-> qualification}}</td>
                     <td>{{$data->room_no}}</td>
                     <td>{{$data->time}}</td>
-                   
+
                   </tr>
                   @endforeach
             </tbody>
-        </table>  
+        </table>
         </div>
       </div>
     </div>
-    
-     
 
-   
-  
+
+
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" ></script>
 
-    
-    
+
+
   </body>
 </html>
 
-            
- 
- 
+
+

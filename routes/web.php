@@ -26,7 +26,7 @@ use App\Http\Controllers\AppointmentController;
 //home
 //homecontroler
 Route::get('/',[HomeController::class,'index']);
-Route::get('/home',[HomeController::class,'redirect']);
+Route::get('/home',[HomeController::class,'redirect'])->name('home');
 
 //apointment frontend
 Route::post('/appointment', [HomeController::class, 'appointment'])->name('appointment');
@@ -58,9 +58,9 @@ Route::middleware(['auth','role:1','verified'])->group(function(){
 
 
 //Frontend
-Route::get('/doctor', [FrontendController::class, 'doctor']);
-Route::get('/doctor/about', [FrontendController::class, 'about']);
-Route::get('/doctor/contact', [FrontendController::class, 'contact']);
+Route::get('/doctor', [FrontendController::class, 'doctor'])->name('doctor');
+Route::get('/doctor/about', [FrontendController::class, 'about'])->name('about');
+Route::get('/doctor/contact', [FrontendController::class, 'contact'])->name('contact');
 Route::get('/apply', [FrontendController::class, 'apply']);
 
 

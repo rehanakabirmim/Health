@@ -20,7 +20,7 @@
                     <th>User Name</th>
                     <!-- <th>Email</th> -->
                     <th>Phone</th>
-                    
+
                     <th>Doctor Name</th>
                     <th>Date</th>
                     <th>Message</th>
@@ -28,8 +28,8 @@
                     <th>Approve</th>
                     <th>Canceled</th>
                     <th>Send Mail</th>
-                    
-                    <th>Manage</th>
+
+
                   </tr>
                 </thead>
                 <tbody>
@@ -45,34 +45,35 @@
                     <td><a class="btn btn-success" href="{{url('dashboard/approved',$data->id)}}">Approved</a></td>
 
                     <td><a class="btn btn-danger" href="{{url('dashboard/canceled',$data->id)}}">Canceled</a></td>
-                  
+
 
                     <td><a class="btn btn-primary" href="{{url('dashboard/emailView',$data->id)}}">Send Mail</a></td>
-                    <td>
-                        <div class="btn-group btn_group_manage" role="group">
-                          <button type="button" class="btn btn-sm btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Manage</button>
-                          <ul class="dropdown-menu">
-                          <!-- <li><a class="dropdown-item" href="{{url('dashboard/doctor/view/'.$data->id)}}">View</a></li>
-                          <li><a class="dropdown-item" href="{{url('dashboard/doctor/edit/'.$data->id)}}">Edit</a></li>
-                            <li><a class="dropdown-item" href="{{url('dashboard/user/delete/'.$data->id)}}">Delete</a></li> -->
-                            <!-- <li><a class="dropdown-item" href="#" id="softDelete" data-bs-toggle="modal" data-bs-target="#softDeleteModal" data-id="">Delete</a></li> -->
-                          </ul>
-                          </ul>
-                        </div>
-                    </td>
+
                   </tr>
                   @endforeach
                 </tbody>
+                <tfoot>
+                    <tr>
+                        <th>User Name</th>
+                        <!-- <th>Email</th> -->
+                        <th>Phone</th>
+
+                        <th>Doctor Name</th>
+                        <th>Date</th>
+                        <th>Message</th>
+                        <th>Status</th>
+                        <th>Approve</th>
+                        <th>Canceled</th>
+                        <th>Send Mail</th>
+
+                        
+                    </tr>
+                </tfoot>
+
               </table>
             </div>
-            <div class="card-footer">
-              <div class="btn-group" role="group" aria-label="Button group">
-                <button type="button" class="btn btn-sm btn-dark">Print</button>
-                <button type="button" class="btn btn-sm btn-secondary">PDF</button>
-                <button type="button" class="btn btn-sm btn-dark">Excel</button>
-              </div>
-            </div>
+
           </div>
       </div>
   </div>
- @endsection 
+ @endsection

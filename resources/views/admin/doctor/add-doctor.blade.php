@@ -57,9 +57,9 @@
 
 
                                       <div class="row mb-3">
-                                        <label class="col-sm-3 col-form-label col_form_label">Designation<span class="req_star">*</span>:</label>
+                                        <label class="col-sm-3 col-form-label col_form_label">Qualification<span class="req_star">*</span>:</label>
                                         <div class="col-sm-7">
-                                          <input type="text" class="form-control form_control" id="" name="designation">
+                                          <input type="text" class="form-control form_control" id="" name="qualification">
                                         </div>
                                       </div>
 
@@ -86,7 +86,7 @@
                                       <div class="row mb-3">
                                         <label class="col-sm-3 col-form-label col_form_label">Room No<span class="req_star">*</span>:</label>
                                         <div class="col-sm-7">
-                                          <input type="number" class="form-control form_control" id="" name="room_no">
+                                          <input type="TEXT" class="form-control form_control" id="" name="room_no">
                                         </div>
                                       </div>
 

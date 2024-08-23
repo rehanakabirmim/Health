@@ -35,7 +35,7 @@
           <button type="button" class="close" data-dismiss="alert">x </button>
           {{ session()->get('message')}}
           </div>
-    @endif      
+    @endif
 
 
     <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
@@ -44,7 +44,7 @@
 
 
 
-        
+
 
 <!-- SEARCH BAR -->
 
@@ -71,52 +71,58 @@
 
         <div class="collapse navbar-collapse" id="navbarSupport">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item {{Request::is('/home') ? 'active':''}}">
-
-             
+            <li class="nav-item {{request()->routeIs('home') ? 'active':''}}">
               <a class="nav-link" href="{{url('/home')}}">Home</a>
-
             </li>
-            <li class="nav-item {{Request::is('/doctor/about') ? 'active':''}}">
+            <li class="nav-item {{request()->routeIs('about') ? 'active':''}}">
               <a class="nav-link" href="{{url('/doctor/about')}}">About Us</a>
             </li>
-            <li class="nav-item {{Request::is('/doctor') ? 'active':''}}">
+            <li class="nav-item {{request()->routeIs('doctor') ? 'active':''}}">
               <a class="nav-link" href="{{url('/doctor')}}">Doctors</a>
             </li>
             <!-- <li class="nav-item">
               <a class="nav-link" href="blog.html">News</a>
             </li> -->
-            <li class="nav-item {{Request::is('/doctor/contact') ? 'active':''}}">
+            <li class="nav-item {{request()->routeIs('contact') ? 'active':''}}">
               <a class="nav-link" href="{{url('/doctor/contact')}}">Contact</a>
             </li>
             @auth
 
-            <li class="nav-item {{Request::is('/myappointment') ? 'active':''}} ">
+            <li class="nav-item">
               <a class="nav-link btn btn-info ml-lg-3" href="{{url('/myappointment')}}">My Appointment</a>
             </li>
 
-            <li class="nav-item dropdown ">
+            
+
+         <li class="nav-item dropdown ">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
           {{Auth::user()->name}}
           </a>
-          <ul class="dropdown-menu">
+           <ul class="dropdown-menu">
+            <li>
+                <a a class="dropdown-item" href="{{url('/dashboard')}}">Dashboard</a>
+              </li>
+
             <li><a class="dropdown-item" href="{{route('profile.edit')}}">Profile</a></li>
-            
-            <li><a class="dropdown-item" 
+
+            <li><a class="dropdown-item"
             onclick="event.preventDefault(); document.getElementById('frm-logout').submit();"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
           </ul>
 
           <form id="frm-logout" action="{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf
                         </form>
-            @else
+
+
+
+             @else
             <li class="nav-item">
               <a class="btn btn-primary ml-lg-3" href="{{route('login')}}">Login</a>
             </li>
             <li class="nav-item">
               <a class="btn btn-primary ml-lg-3" href="{{route('register')}}">Register</a>
             </li>
-          
+
             @endauth
           </ul>
         </div> <!-- .navbar-collapse -->
@@ -147,10 +153,10 @@
             <li><a href="#">Advertise</a></li>
             <!-- <li><a href="#">Join as Doctors</a></li> -->
             <li><a href="{{url('/apply')}}" class="text-reset">Join as Doctors</a>
-            </li>   
-                                        
-                                    
-                                
+            </li>
+
+
+
           </ul>
         </div>
         <div class="col-sm-6 col-lg-3 py-3">
@@ -209,7 +215,7 @@
 
 
 
-<!-- 
+<!--
 {{-- <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>

@@ -69,6 +69,19 @@
                         @endif
                       </div>
                     </div>
+
+                    <div class="row mb-3 {{ $errors->has('qualification') ? ' has-error' : '' }}">
+                      <label class="col-sm-3 col-form-label col_form_label">Qualification<span class="req_star">*</span>:</label>
+                      <div class="col-sm-7">
+                        <input type="qualification" class="form-control form_control" id="" name="qualification" value="{{$data->qualification}}">
+                        @if($errors->has('qualification'))
+                          <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('qualification') }}</strong>
+                          </span>
+                        @endif
+                      </div>
+                    </div>
+
                     <div class="row mb-3 {{ $errors->has('room_no') ? ' has-error' : '' }}">
                       <label class="col-sm-3 col-form-label col_form_label">Room No<span class="req_star">*</span>:</label>
                       <div class="col-sm-7">
@@ -76,6 +89,19 @@
                         @if($errors->has('room_no'))
                           <span class="invalid-feedback" role="alert">
                             <strong>{{ $errors->first('room_no') }}</strong>
+                          </span>
+                        @endif
+                      </div>
+                    </div>
+
+
+                    <div class="row mb-3 {{ $errors->has('time') ? ' has-error' : '' }}">
+                      <label class="col-sm-3 col-form-label col_form_label">Time<span class="req_star">*</span>:</label>
+                      <div class="col-sm-7">
+                        <input type="text" class="form-control form_control" id="" name="time" value="{{$data->time}}" >
+                        @if($errors->has('time'))
+                          <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('time') }}</strong>
                           </span>
                         @endif
                       </div>
