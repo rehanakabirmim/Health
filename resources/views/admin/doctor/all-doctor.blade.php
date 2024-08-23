@@ -24,6 +24,7 @@
                     <th>Specialty</th>
                     <th>Room No</th>
                     <th>Time</th>
+                    <th>Admission Fee</th>
                     <th>Doctor Image</th>
 
                     <th>Manage</th>
@@ -39,6 +40,7 @@
                     <td>{{$data->specialityInfo->speciality_name}}</td>
                     <td>{{$data->room_no}}</td>
                     <td>{{$data->time}}</td>
+                    <td>{{$data->admission_fee}}</td>
                     <td>
                       @if($data->photo!='')
                         <img height="30" src="{{asset('uploads/users/'.$data->photo)}}" alt="User Photo"/>
@@ -71,6 +73,7 @@
                         <th>Specialty</th>
                         <th>Room No</th>
                         <th>Time</th>
+                        <th>Admission Fee</th>
                         <th>Doctor Image</th>
 
                         <th>Manage</th>

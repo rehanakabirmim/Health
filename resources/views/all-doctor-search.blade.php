@@ -32,7 +32,8 @@
                     <th>Qualification</th>
                     <th>Room No</th>
                     <th>Time</th>
-                    
+                    <th>Admission Fee</th>
+
 
                   </tr>
           </thead>
@@ -48,6 +49,7 @@
                     <td>{{$data-> qualification}}</td>
                     <td>{{$data->room_no}}</td>
                     <td>{{$data->time}}</td>
+                    <td>{{$data->admission_fee}}</td>
 
                   </tr>
                   @endforeach
