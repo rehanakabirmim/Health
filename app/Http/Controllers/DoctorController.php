@@ -158,9 +158,21 @@ class DoctorController extends Controller
 
       $all = Doctor::where('specialty_id', $specialty_id)->latest()->get();
 
-     
+
       return json_decode($all);
   }
+
+  //applying doctor delete
+
+  public function apply_delete($id)
+    {
+        // Find the record by id and delete it
+        DoctorApply::findOrFail($id)->delete();
+
+        // After deleting, redirect to the show_apply route with a success message
+        return redirect()->route('apply.show')->with('success', 'Doctor application deleted successfully.');
+    }
+
 
 }
 

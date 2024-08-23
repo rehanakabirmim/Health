@@ -48,6 +48,8 @@
                           <ul class="dropdown-menu">
                           <li><a class="dropdown-item" href="{{url('dashboard/apply/view/'. $data->id)}}">View</a></li>
 
+                          <li><a class="dropdown-item" href="{{url('dashboard/apply/delete/'. $data->id)}}">Delete</a></li>
+
 
                           </ul>
 

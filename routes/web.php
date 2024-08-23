@@ -35,7 +35,7 @@ Route::get('/cancel_appoint/{id}',[HomeController::class,'cancel_appoint']);
 //contact frontend
 Route::post('/contact',[HomeController::class,'contact']);
 //join as doctor
-Route::post('/apply',[HomeController::class,'apply']);
+Route::post('/apply',[HomeController::class,'apply'])->name('appointment.submit');
 
 //search
 Route::get('/search', [HomeController::class, 'search'])->name('search');
@@ -83,17 +83,19 @@ Route::middleware(['auth','role:1','verified'])->group(function(){
     // Route::post('dashboard/user/restore', [UserController::class, 'restore']);
     Route::get('dashboard/user/delete/{id}', [DoctorController::class, 'delete']);
     //apply backend
-    Route::get('dashboard/show_apply', [DoctorController::class, 'show_apply']);
+    // Route::get('dashboard/show_apply', [DoctorController::class, 'show_apply']);
+    Route::get('dashboard/show_apply', [DoctorController::class, 'show_apply'])->name('apply.show');
     Route::get('dashboard/apply/view/{id}', [DoctorController::class, 'apply_view']);
 
+    Route::get('dashboard/apply/delete/{id}', [DoctorController::class, 'apply_delete'])->name('apply.delete');
 
     //contact backend
     Route::get('dashboard/show_contact', [ContactController::class, 'show_contact']);
-    
+
     Route::get('/dashboard', function () {
         return view('admin.dashboard');
     });
-    
+
 });
 
 

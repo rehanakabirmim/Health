@@ -8,7 +8,7 @@
                   <!-- <div class="col-md-8 card_title_part">
                       <i class="fab fa-gg-circle"></i>All User Information
                   </div> -->
-                  
+
               </div>
             </div>
             <div class="card-body">
@@ -20,9 +20,9 @@
                     <th>Message</th>
                     <th>Status</th>
                     <th>Cancel Appointment</th>
-                   
-                    
-                  
+
+
+
                   </tr>
                 </thead>
                 <tbody>
@@ -32,16 +32,16 @@
                     <td>{{$data->date}}</td>
                     <td>{{$data->message}}</td>
                     <td>{{$data->status}}</td>
-                    <!-- <li><a class="dropdown-item" href="{{url('dashboard/user/delete/'.$data->id)}}">Delete</a></li> -->
+                     <li><a class="dropdown-item" href="{{url('dashboard/user/delete/'.$data->id)}}">Delete</a></li>
                     <td><a class="btn btn-danger ml-lg-3" onclick="return confirm('Are you sure to delete this')" href="{{ url('/cancel_appoint/' . $data->id) }}">Cancel</a></td>
                   </tr>
                   @endforeach
                 </tbody>
               </table>
-            </div>    
-           
+            </div>
+
             </div>
           </div>
       </div>
   </div>
- @endsection 
+ @endsection

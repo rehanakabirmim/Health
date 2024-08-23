@@ -16,7 +16,7 @@ use Carbon\carbon;
 class HomeController extends Controller
 {
     public function redirect(){
-        
+
         return view('welcome');
 
     }
@@ -43,8 +43,8 @@ class HomeController extends Controller
         //     'doctor'=>'Please Select Doctor',
 
         //   ]);
-           
-      
+
+
             $insert=Appointment::insert([
             'name'=>$request['name'],
             'phone'=>$request['phone'],
@@ -65,10 +65,11 @@ class HomeController extends Controller
             ]);
 
 
-            return redirect()->back()->with('message','Appointment Request Successful . We will contact with you soon');
-           
-            
-      
+
+
+            return redirect()->back()->with('message', 'Appointment Request Successful. We will contact you soon.');
+
+
 
     }
 
@@ -82,7 +83,7 @@ class HomeController extends Controller
         else{
             return redirect()->back();
         }
-       
+
 
     }
 
@@ -95,22 +96,22 @@ class HomeController extends Controller
     }
 
 
-    
-    
-    
+
+
+
 
     public function contact(Request $request){
-  
+
         $insert=Contact::insert([
           'name'=>$request['name'],
-          
+
           'email'=>$request['email'],
           'subject'=>$request['subject'],
             'message'=>$request['message'],
 
           'created_at'=>Carbon::now()->toDateTimeString(),
 
-          
+
         ]);
         return redirect()->back()->with('message','Contact Message Send is successful');
     }
@@ -124,8 +125,8 @@ class HomeController extends Controller
 
 public function apply(Request $request){
 
-   
-   
+
+
 
     $insert=DoctorApply::insertGetId([
       'name'=>$request['name'],
@@ -134,11 +135,11 @@ public function apply(Request $request){
       'specialty'=>$request['specialty'],
     'about'=>$request['about'],
 
-    
+
 
       'created_at'=>Carbon::now()->toDateTimeString(),
 
-   
+
     ]);
 
     if($request->hasFile('photo')){
@@ -150,7 +151,7 @@ public function apply(Request $request){
             'photo'=>$imageName,
             'updated_at'=>Carbon::now()->toDateTimeString(),
         ]);
-         return back();   
+         return back();
     }
 
     }
@@ -163,7 +164,7 @@ public function apply(Request $request){
         $all=Doctor::orderBy('id','DESC')->get();
         return view('all-doctor-search',compact('all'));
 
-        
+
     }
 
 
@@ -173,8 +174,8 @@ public function apply(Request $request){
         $all=Doctor::orderBy('id','DESC')->get();
             return view('all-doctor-search',compact('all'));
         }
-       
-    
-}    
+
+
+}
 
 

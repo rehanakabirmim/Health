@@ -25,7 +25,8 @@ class FrontendController extends Controller
         return view('doctor_apply');
     }
 
-    
+   
+
 }
 
 
