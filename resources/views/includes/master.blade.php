@@ -92,7 +92,7 @@
               <a class="nav-link btn btn-info ml-lg-3" href="{{url('/myappointment')}}">My Appointment</a>
             </li>
 
-            
+
 
          <li class="nav-item dropdown ">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -186,7 +186,7 @@
 
       <hr>
 
-      <p id="copyright">Copyright &copy; 2020 <a href="https://macodeid.com/" target="_blank">MACode ID</a>. All right reserved</p>
+      <p id="copyright">Copyright &copy; 2024 <a href="{{ url('/home') }}" target="_blank">OneHealth</a>. All rights reserved.</p>
     </div>
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
